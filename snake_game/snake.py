@@ -12,7 +12,7 @@ high_score = 0
 wn = turtle.Screen()
 wn.title("Snake Game")
 wn.bgcolor("black")
-wn.setup(width=800, height=800)
+wn.setup(width=800, height=600)
 wn.tracer(0) # Turns off the screen updates
 
 # Snake head
@@ -95,7 +95,7 @@ try:
         wn.update()
 
         # Check for a collision with the border
-        if head.xcor() > 390 or head.xcor() < -390 or head.ycor() > 390 or head.ycor() < -390:
+        if head.xcor() > 390 or head.xcor() < -390 or head.ycor() > 290 or head.ycor() < -290:
             time.sleep(1)
             head.goto(0,0)
             head.direction = "stop"
@@ -121,7 +121,7 @@ try:
         if head.distance(food) < 20:
             # Move the food to a random spot
             x = random.randint(-380, 380)
-            y = random.randint(-380, 380)
+            y = random.randint(-280, 280)
             food.goto(x,y)
 
             # Add a segment
